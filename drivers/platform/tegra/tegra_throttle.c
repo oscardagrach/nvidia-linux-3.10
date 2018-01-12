@@ -51,7 +51,7 @@ static struct {
 #if defined(CONFIG_ARCH_TEGRA_12x_SOC) || defined(CONFIG_ARCH_TEGRA_21x_SOC)
 	{ .cap_name = "cap.throttle.gbus" },
 #endif
-#ifdef CONFIG_TEGRA_GPU_DVFS
+#if defined(CONFIG_TEGRA_GPU_DVFS) || defined(CONFIG_ARCH_TEGRA_11x_SOC)
 	{ .cap_name = "cap.throttle.c2bus" },
 	{ .cap_name = "cap.throttle.c3bus" },
 #else
