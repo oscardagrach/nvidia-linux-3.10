@@ -44,8 +44,14 @@ struct tegra_cooling_device {
 #define CBUS_CNT		1
 #endif
 
+
+#ifdef CONFIG_ARCH_TEGRA_11x_SOC
+/* cpu, c2bus, c3bus, sclk, emc */
+#define NUM_OF_CAP_FREQS	5
+#else
 /* cpu, gpu(0|1), cbus(1|2), sclk, emc */
 #define NUM_OF_CAP_FREQS	(1 + GBUS_CNT + CBUS_CNT + 1 + 1)
+#endif
 
 #ifdef CONFIG_TEGRA_THERMAL_THROTTLE
 bool tegra_is_throttling(int *count);
