@@ -26,6 +26,8 @@
 
 #include <linux/platform/tegra/clock.h>
 #include <linux/tegra-fuse.h>
+#include <linux/tegra-soc.h>
+#include <linux/platform/tegra/common.h>
 
 #define CORE_MODULES_STATES 1
 #define TEMPERATURE_RANGES 4
@@ -574,9 +576,11 @@ int __init tegra11x_select_core_edp_table(unsigned int regulator_mA,
 					  struct tegra_core_edp_limits *limits)
 {
 	int i;
-	int sku = tegra_sku_id;
+	int sku = 0;
 	unsigned long *cap_rates;
 	struct core_edp_entry *edp_entry;
+
+	sku = tegra_get_sku_id();
 
 	BUG_ON(ARRAY_SIZE(temperatures) != TEMPERATURE_RANGES);
 	BUG_ON(ARRAY_SIZE(cap_clks_names) != CAP_CLKS_NUM);

@@ -114,8 +114,10 @@ static void rev_sku_to_speedo_ids(int rev, int sku)
 
 void tegra_init_speedo_data(void)
 {
-	int i;
+	int i, tegra_sku_id;
 	u32 ft_rev, ft_rev_major, ft_rev_minor;
+
+	tegra_sku_id = tegra_get_sku_id();
 
 	cpu_speedo_value = 1024 + tegra_fuse_readl(FUSE_CPU_SPEEDO_1);
 	core_speedo_value = tegra_fuse_readl(FUSE_CORE_SPEEDO_0);
