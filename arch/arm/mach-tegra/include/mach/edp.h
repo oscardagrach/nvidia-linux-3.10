@@ -143,6 +143,11 @@ static inline struct tegra_cooling_device *tegra_core_edp_get_cdev(void)
 { return NULL; }
 #endif
 
+#ifdef CONFIG_ARCH_TEGRA_11x_SOC
+int tegra11x_select_core_edp_table(unsigned int regulator_mA,
+				   struct tegra_core_edp_limits *limits);
+#endif
+
 #ifdef CONFIG_SYSEDP_FRAMEWORK
 struct tegra_sysedp_corecap *tegra_get_sysedp_corecap(unsigned int *sz);
 #else
