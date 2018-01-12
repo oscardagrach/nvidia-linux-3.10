@@ -1,6 +1,7 @@
 /dts-v1/;
 
 #include <dt-bindings/pinctrl/pinctrl-tegra.h>
+#include <tegra114-platforms/tegra114-bthrot-cdev.dtsi>
 #include <tegra114-platforms/tegra114-molly-pinmux.dtsi>
 #include <tegra114-platforms/tegra114-molly-pmic.dtsi>
 #include <tegra114-platforms/tegra114-molly-powermon.dtsi>

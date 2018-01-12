@@ -62,7 +62,12 @@ static struct {
 };
 
 static bool tegra_throttle_init_failed;
+
+#ifdef CONFIG_ARCH_TEGRA_11x_SOC
+static const int NUM_OF_CAP_FREQS_DT = 5;
+#else
 static const int NUM_OF_CAP_FREQS_DT = 6; /* fixed at 6 by DT format */
+#endif
 
 struct throttle_table {
 	unsigned long cap_freqs[NUM_OF_CAP_FREQS];
