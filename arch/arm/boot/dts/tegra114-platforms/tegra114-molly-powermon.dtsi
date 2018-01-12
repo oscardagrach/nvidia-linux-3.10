@@ -1,0 +1,12 @@
+/ {
+	i2c@7000c000 {
+		ina3221@40 {
+			compatible = "ti,ina3221x";
+			reg = <0x40>;
+			ti,rail-name = "VIN_5V0";
+			ti,continuous-config = <0x4727>;
+			ti,trigger-config = <0x4003>;
+			ti,shunt-resistor-mohm = <5>;
+		};
+	};
+};

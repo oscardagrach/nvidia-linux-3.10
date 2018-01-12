@@ -1,0 +1,32 @@
+/dts-v1/;
+
+#include <dt-bindings/pinctrl/pinctrl-tegra.h>
+#include <tegra114-platforms/tegra114-molly-pinmux.dtsi>
+#include <tegra114-platforms/tegra114-molly-pmic.dtsi>
+#include <tegra114-platforms/tegra114-molly-powermon.dtsi>
+#include <tegra114-platforms/tegra114-molly-sensors.dtsi>
+
+
+/include/ "tegra114.dtsi"
+
+/ {
+	model = "Google Tegra114 Molly board";
+	compatible = "google,molly", "nvidia,tegra114";
+
+	chosen {
+		bootargs = "console=ttyFIQ0 smsc95xx.boot_wol_config=0x07 smsc95xx.turbo_mode=N";
+	};
+
+	clocks {
+		compatible = "simple-bus";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		clk32k_in: clock {
+			compatible = "fixed-clock";
+			reg=<0>;
+			#clock-cells = <0>;
+			clock-frequency = <32768>;
+		};
+	};
+};		
