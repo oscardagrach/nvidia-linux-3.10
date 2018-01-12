@@ -27,10 +27,6 @@
 #error "tegra3x: no support"
 #endif
 
-#ifdef CONFIG_ARCH_TEGRA_11x_SOC
-#error "tegra11x: no support"
-#endif
-
 #ifdef CONFIG_ARCH_TEGRA_14x_SOC
 #error "tegra14x: no support"
 #endif
