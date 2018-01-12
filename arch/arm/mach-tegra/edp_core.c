@@ -24,6 +24,7 @@
 #include <linux/tegra-soc.h>
 
 #include <mach/edp.h>
+#include <linux/tegra_throttle.h>
 
 #include <linux/platform/tegra/clock.h>
 #include <linux/platform/tegra/common.h>
