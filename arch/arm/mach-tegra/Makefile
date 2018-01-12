@@ -63,6 +63,7 @@ obj-y                                   += apbio.o
 obj-$(CONFIG_TEGRA_ARB_SEMAPHORE)       += arb_sema.o
 
 obj-$(CONFIG_TEGRA_CORE_EDP_LIMITS)     += edp_core.o
+obj-$(CONFIG_ARCH_TEGRA_11x_SOC)		+= tegra11_edp.o
 obj-$(CONFIG_ARCH_TEGRA_12x_SOC)        += tegra12_edp.o
 ifeq ($(CONFIG_ARCH_TEGRA_13x_SOC),y)
 obj-y                                   += tegra13_speedo.o
