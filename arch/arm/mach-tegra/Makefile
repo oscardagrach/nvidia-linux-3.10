@@ -32,7 +32,7 @@ obj-$(CONFIG_HAVE_ARM_TWD)              += cpu_timer_twd.o
 ifeq ($(CONFIG_ARCH_TEGRA_2x_SOC),y)
 obj-y                                   += common-t2.o
 obj-y                                   += pm-t2.o
-obj-$(CONFIG_ARCH_TEGRA_2x_SOC)		+= sleep-t20.o
+obj-$(CONFIG_ARCH_TEGRA_2x_SOC)			+= sleep-t20.o
 obj-$(CONFIG_PM_SLEEP)                  += wakeups-t2.o
 ifeq ($(CONFIG_CPU_IDLE),y)
 obj-$(CONFIG_PM_SLEEP)                  += cpuidle-t2.o
@@ -66,13 +66,15 @@ obj-$(CONFIG_TEGRA_CORE_EDP_LIMITS)     += edp_core.o
 obj-$(CONFIG_ARCH_TEGRA_12x_SOC)        += tegra12_edp.o
 ifeq ($(CONFIG_ARCH_TEGRA_13x_SOC),y)
 obj-y                                   += tegra13_speedo.o
+else ifeq ($(CONFIG_ARCH_TEGRA_11x_SOC),y)
+obj-y									+= tegra11_speedo.o
 else
 obj-$(CONFIG_ARCH_TEGRA_12x_SOC)        += tegra12_speedo.o
 endif
 obj-$(CONFIG_ARCH_TEGRA_2x_SOC)         += tegra2_emc.o
 obj-$(CONFIG_ARCH_TEGRA_3x_SOC)         += tegra3_emc.o
-obj-$(CONFIG_ARCH_TEGRA_2x_SOC)		+= tegra20_speedo.o
-obj-$(CONFIG_ARCH_TEGRA_3x_SOC)		+= tegra30_speedo.o
+obj-$(CONFIG_ARCH_TEGRA_2x_SOC)			+= tegra20_speedo.o
+obj-$(CONFIG_ARCH_TEGRA_3x_SOC)			+= tegra30_speedo.o
 obj-$(CONFIG_HOTPLUG_CPU)               += hotplug.o
 obj-$(CONFIG_CPU_IDLE)                  += cpuidle.o
 obj-$(CONFIG_CPU_IDLE)                  += sleep.o
@@ -82,11 +84,11 @@ obj-y                                   += headsmp.o
 obj-$(CONFIG_ARCH_TEGRA_2x_SOC)         += board-dt-tegra20.o
 obj-$(CONFIG_ARCH_TEGRA_3x_SOC)         += board-dt-tegra30.o
 
-obj-$(CONFIG_ARCH_TEGRA_2x_SOC)		+= board-harmony-pcie.o
+obj-$(CONFIG_ARCH_TEGRA_2x_SOC)			+= board-harmony-pcie.o
 
-obj-$(CONFIG_ARCH_TEGRA_2x_SOC)		+= board-paz00.o
+obj-$(CONFIG_ARCH_TEGRA_2x_SOC)			+= board-paz00.o
 
-obj-y					+= board-common.o
+obj-y									+= board-common.o
 
 obj-y                                   += board-touch-raydium_spi.o
 obj-y                                   += board-touch-synaptics-spi.o
@@ -138,6 +140,16 @@ obj-${CONFIG_MACH_LAGUNA}               += board-ardbeg-sdhci.o
 obj-${CONFIG_MACH_LAGUNA}               += board-ardbeg-sensors.o
 obj-${CONFIG_MACH_LAGUNA}               += board-laguna-power.o
 obj-${CONFIG_MACH_LAGUNA}               += panel-a-1080p-11-6.o
+
+obj-${CONFIG_MACH_MOLLY}               += board-molly.o
+obj-${CONFIG_MACH_MOLLY}               += board-molly-sdhci.o
+obj-${CONFIG_MACH_MOLLY}               += board-molly-sensors.o
+obj-${CONFIG_MACH_MOLLY}               += board-molly-memory.o
+obj-${CONFIG_MACH_MOLLY}               += board-molly-power.o
+obj-${CONFIG_MACH_MOLLY}               += board-molly-panel.o
+obj-${CONFIG_MACH_MOLLY}                += panel-a-1080p-11-6.o
+obj-${CONFIG_MACH_MOLLY}                += panel-p-wuxga-10-1.o
+obj-${CONFIG_MACH_MOLLY}                += panel-s-wqxga-10-1.o
 
 obj-${CONFIG_ARCH_TEGRA_VCM30T124}      += vcm30_t124.o
 
